@@ -15,13 +15,14 @@
 */
 
 
-
+// create function for random integer then returns a rounded integer with the arguments of lowest and size.
 function randomInt(lowest, size) {
-    return Math.random(Math.floor()) * (lowest - size) + lowest;
+    return Math.floor(Math.random() * (size - lowest) + lowest);
 }
-
+// sets this variable to use the parameters of 0 and 9 on the function
 var randomQ = randomInt(0, 9);
-var quoteElem = document.getElementsByTagName("quote");
+// set variable to the id of the quote tag
+var quoteElem = document.getElementById("q");
 
 function getQuote(n) {
     var quotes = [
@@ -39,6 +40,5 @@ function getQuote(n) {
 
     return quotes[n];
 }
-
-getQuote(randomQ);
+// This sets the quoteElem var to the getQuote function with the parameter of the randomQ var.
 quoteElem.innerHTML = getQuote(randomQ);
